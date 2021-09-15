@@ -20,5 +20,11 @@ namespace EventBunker.Services
         {
             return _context.EventForm.ToList();
         }
+
+        public void Insert(EventForm obj)
+        {
+            _context.Add(obj);
+            _context.SaveChanges();
+        }
     }
 }

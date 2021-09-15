@@ -1,0 +1,36 @@
+﻿@model EventBunker.Models.EventForm
+
+@{
+    ViewData["Title"] = "Formulário de Evento";
+}
+
+<h2 class="justify-content-center text-center">@ViewData["Title"]</h2>
+
+<h3>Evento </h3>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">            
+            <div class="form-group">
+                <label asp-for="Name" class="control-label">Nome</label>
+                <input asp-for="Name" class="form-control" />                
+            </div>
+            <div class="form-group">
+                <label asp-for="StartDate" class="control-label">Início</label>
+                <input asp-for="StartDate" class="form-control" />                
+            </div>
+            <div class="form-group">
+                <label asp-for="EndDate" class="control-label">Fim</label>
+                <input asp-for="EndDate" class="form-control" />              
+            </div>            
+            <div class="form-group">
+                <label asp-for="Organizer" class="control-label">Organizador</label>
+                <input asp-for="Organizer" class="form-control" />                
+            </div>            
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-success btn-outline-dark" />
+                <a input type="button" href="Index" value="Cancel" class="btn btn-success btn-outline-dark" />Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>

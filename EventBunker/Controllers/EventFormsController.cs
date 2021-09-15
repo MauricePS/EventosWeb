@@ -1,4 +1,5 @@
-﻿using EventBunker.Services;
+﻿using EventBunker.Models;
+using EventBunker.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -21,5 +22,17 @@ namespace EventBunker.Controllers
             var list = _eventFormService.FindAll();
             return View(list);
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Create (EventForm eventForm)
+        {
+            _eventFormService.Insert(eventForm);
+            return RedirectToAction(nameof(Index));
+        }
+
     }
 }

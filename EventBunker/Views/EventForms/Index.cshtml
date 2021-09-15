@@ -1,10 +1,14 @@
 ﻿@model IEnumerable<EventBunker.Models.EventForm>
 
 @{
-    ViewData["Title"] = "Eventos";
+    ViewData["Title"] = "Lista de Eventos";
 }
 
 <h2>@ViewData["Title"]</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-info btn-outline-dark">+ Criar Evento</a>
+</p>
 
 <table class="table table-striped table-hover">
     <thead>
@@ -42,7 +46,7 @@
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>                
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Delete" asp-route-id="@item.Id">|    Delete</a>
             </td>
         </tr>
             }
