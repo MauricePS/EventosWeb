@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using EventBunker.Data;
+using EventBunker.Services;
 
 namespace EventBunker
 {
@@ -28,7 +29,8 @@ namespace EventBunker
             services.AddDbContext<EventBunkerContext>(options =>
                 options.UseMySQL(Configuration.GetConnectionString("Default")));
             services.AddControllersWithViews();
-            
+
+            services.AddScoped<EventFormService>();
 
         }
 
