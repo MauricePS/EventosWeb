@@ -25,10 +25,11 @@ namespace EventBunker
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<EventBunkerContext>(options =>
+                options.UseMySQL(Configuration.GetConnectionString("Default")));
             services.AddControllersWithViews();
 
-            services.AddDbContext<EventBunkerContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("EventBunkerContext")));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
