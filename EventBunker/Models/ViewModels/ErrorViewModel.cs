@@ -1,6 +1,6 @@
 using System;
 
-namespace EventBunker.Models
+namespace EventBunker.Models.ViewModels
 {
     public class ErrorViewModel
     {

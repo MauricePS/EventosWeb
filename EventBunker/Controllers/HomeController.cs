@@ -1,4 +1,4 @@
-﻿using EventBunker.Models;
+﻿using EventBunker.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
