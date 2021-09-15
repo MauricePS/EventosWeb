@@ -3,14 +3,16 @@ using System;
 using EventBunker.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EventBunker.Migrations
 {
     [DbContext(typeof(EventBunkerContext))]
-    partial class EventBunkerContextModelSnapshot : ModelSnapshot
+    [Migration("20210915210640_OtherEntitie")]
+    partial class OtherEntitie
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

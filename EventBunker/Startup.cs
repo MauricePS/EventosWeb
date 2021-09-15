@@ -28,7 +28,7 @@ namespace EventBunker
             services.AddDbContext<EventBunkerContext>(options =>
                 options.UseMySQL(Configuration.GetConnectionString("Default")));
             services.AddControllersWithViews();
-
+            
 
         }
 

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using EventBunker.Models;
 
 namespace EventBunker.Data
@@ -14,6 +10,7 @@ namespace EventBunker.Data
         {
         }
 
-        public DbSet<EventBunker.Models.Event> Event { get; set; }
+        public DbSet<Event> Event { get; set; }
+        public DbSet<EventForm> EventForm { get; set; }
     }
 }
