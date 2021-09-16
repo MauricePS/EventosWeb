@@ -55,7 +55,7 @@ namespace EventBunker.Controllers
         {
             _eventFormService.Remove(id);
             return RedirectToAction(nameof(Index));
-        }
+        }      
 
     }
 }

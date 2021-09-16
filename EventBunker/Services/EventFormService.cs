@@ -1,5 +1,7 @@
 ﻿using EventBunker.Data;
 using EventBunker.Models;
+using EventBunker.Services.Exceptions;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,5 +40,23 @@ namespace EventBunker.Services
             _context.EventForm.Remove(obj);
             _context.SaveChanges();
         }
+
+        public void Update(EventForm obj)
+        {
+            if (!_context.EventForm.Any(x => x.Id == obj.Id))
+            {
+                throw new NotFoundException("Id não encontrada");
+            }
+            try
+            {
+                _context.Update(obj);
+                _context.SaveChanges();
+            }
+            catch(DbUpdateConcurrencyException e)
+            {
+                throw new DbConcurrencyException(e.Message);
+            }
+        }
+
     }
 }
