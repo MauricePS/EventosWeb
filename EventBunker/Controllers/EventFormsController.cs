@@ -34,5 +34,28 @@ namespace EventBunker.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        public IActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var obj = _eventFormService.FindById(id.Value);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+
+            return View(obj);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(int id)
+        {
+            _eventFormService.Remove(id);
+            return RedirectToAction(nameof(Index));
+        }
+
     }
 }

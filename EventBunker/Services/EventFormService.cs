@@ -26,5 +26,17 @@ namespace EventBunker.Services
             _context.Add(obj);
             _context.SaveChanges();
         }
+
+        public EventForm FindById(int id)
+        {
+            return _context.EventForm.FirstOrDefault(obj => obj.Id == id);
+        }
+
+        public void Remove(int id)
+        {
+            var obj = _context.EventForm.Find(id);
+            _context.EventForm.Remove(obj);
+            _context.SaveChanges();
+        }
     }
 }

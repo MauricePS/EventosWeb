@@ -12,9 +12,7 @@ namespace EventBunker.Models
         public DateTime EndDate { get; set; }
 
         public string Organizer{ get; set; }
-                
-        public Event Event { get; set; }
-
+        
         public EventForm()
         {
         }

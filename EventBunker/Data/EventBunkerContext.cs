@@ -10,7 +10,6 @@ namespace EventBunker.Data
         {
         }
 
-        public DbSet<Event> Event { get; set; }
         public DbSet<EventForm> EventForm { get; set; }
     }
 }
